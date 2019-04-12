@@ -15,7 +15,7 @@ class ShapeFactory
   public function getShape(String $shapeId): \Shape\Shape
   {
     if ($shapeId == null) {
-      throw new Exception('Division by zero.');
+      throw new Exception('Shape can\'t be null.');
     }
 
     if (strcmp($shapeId, 'Circle') == 0) {
