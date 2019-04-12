@@ -8,51 +8,58 @@ $nested = '/';
 $path = '';
 
 if (isset($_GET['p'])) {
-	$folders = explode(',', $_GET['p']);
-	$dirToScan .=  ($nested .= implode('/', $folders) . '/' );
-	$path = implode(',', $folders) . ',';
-	unset( $folders[ count($folders) - 1 ] );
-	$backUrl = 'http://' . $_SERVER['HTTP_HOST'] . '/index.php';
+  $folders = explode(',', $_GET['p']);
+  $dirToScan .= ($nested .= implode('/', $folders) . '/');
+  $path = implode(',', $folders) . ',';
+  unset($folders[count($folders) - 1]);
+  $backUrl = 'http://' . $_SERVER['HTTP_HOST'] . '/index.php';
 
-	$backPath = implode(',', $folders);
-	if ($backPath != '') $backUrl .= '?p=' . $backPath;
+  $backPath = implode(',', $folders);
+  if ($backPath != '') $backUrl .= '?p=' . $backPath;
 
-	$links[] = '<li style="width:200px; display:block; height: 32px">'.$folderIcon.' <a style="float:left; padding-top: 5px;" href="'.$backUrl.'">BACK</a></li>';
-	$index = 1;
+  $links[] = '<li style="width:200px; display:block; height: 32px">' . $folderIcon . ' <a style="float:left; padding-top: 5px;" href="' . $backUrl . '">BACK</a></li>';
+  $index = 1;
 }
 
 $files = array_slice(scandir($dirToScan), 2);
 
-foreach($files as $f) {
-	$host = 'http://' . $_SERVER['HTTP_HOST'];
-	if (is_dir($dirToScan . $f)){
+foreach ($files as $f) {
+  $host = 'http://' . $_SERVER['HTTP_HOST'];
+  if (is_dir($dirToScan . $f)) {
 
     $indexLink = '';
     if (file_exists($dirToScan . $f . "/index.php"))
-    $indexLink = '<a target="_blank" style="float:left; margin-left: 50px; padding-top: 5px;" href="'.$host . $nested . $f .'/index.php">Enter</a>';
-    $links[$index] = '<li style="width:400px; display:block; height: 32px">'.$folderIcon.' <a style="float:left; padding-top: 5px;" href="'.$host . '/index.php?p=' . $path . $f.'">'.$f.'</a> '.$indexLink.' </li>';
-	} else $links[$index+5000] = '<li style="width:400px; display:block; height: 32px">'.$fileIcon.' <a target="_blank" style="float:left; padding-top: 5px;" href="'.$host . $nested . $f.'">'.$f.'</a></li>';
-	$index++;
+      $indexLink = '<a target="_blank" style="float:left; margin-left: 50px; padding-top: 5px;" href="' . $host . $nested . $f . '/index.php">Enter</a>';
+    $links[$index] = '<li style="width:400px; display:block; height: 32px">' . $folderIcon . ' <a style="float:left; padding-top: 5px;" href="' . $host . '/index.php?p=' . $path . $f . '">' . $f . '</a> ' . $indexLink . ' </li>';
+  } else $links[$index + 5000] = '<li style="width:400px; display:block; height: 32px">' . $fileIcon . ' <a target="_blank" style="float:left; padding-top: 5px;" href="' . $host . $nested . $f . '">' . $f . '</a></li>';
+  $index++;
 }
 sort($links);
 ?>
 <html>
-	<head>
-		<style>
-			body {
-				font-family: arial;
-				font-size: 13px;
-			}
-			a{text-decoration:none; color: #aaa}
-      a:hover{font-weight: bold}
-		</style>
-	</head>
-	<body>
-		<div><a href=""></a></div>
-		<ul style="list-style-type: none;">
-			<?php foreach($links as $l): ?>
-			<?php print $l; ?>
-			<?php endforeach; ?>
-		</ul>
-	</body>
+<head>
+    <style>
+        body {
+            font-family: arial;
+            font-size: 13px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #aaa
+        }
+
+        a:hover {
+            font-weight: bold
+        }
+    </style>
+</head>
+<body>
+<div><a href=""></a></div>
+<ul style="list-style-type: none;">
+  <?php foreach ($links as $l): ?>
+    <?php print $l; ?>
+  <?php endforeach; ?>
+</ul>
+</body>
 </html>
