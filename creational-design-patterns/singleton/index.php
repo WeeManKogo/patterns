@@ -1,4 +1,7 @@
-<?php 
+<?php
+
+use Singleton\Singleton;
+
 include 'Singleton.php';
 
 class Car extends Singleton {
