@@ -1,6 +1,6 @@
 <?php
 
-namespace Shape;
+namespace Factory\Shape;
 
 interface Shape
 {
