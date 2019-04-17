@@ -1,8 +1,12 @@
 <?php
 
+namespace Patterns\CreationalDesign\Builder\Drinks;
 
-namespace Builder;
-include 'Bottle.php';
+use Patterns\CreationalDesign\Builder\Item;
+use Patterns\CreationalDesign\Builder\Packing\{
+  Packing,
+  Bottle,
+};
 
 abstract class ColdDrink implements Item
 {
