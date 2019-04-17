@@ -1,10 +1,6 @@
 <?php
 
-namespace Singleton;
-
-interface SingletonInterface {
-    public static function getInstance(): SingletonInterface;
-}
+namespace Patterns\CreationalDesign\Singleton;
 
 abstract class Singleton implements SingletonInterface {
     private static $instances = [];
