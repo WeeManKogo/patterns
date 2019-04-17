@@ -1,6 +1,6 @@
 <?php
 
-namespace Patterns\CreationalDesign\Builder;
+namespace Patterns\CreationalDesign\Builder\Drinks;
 
 class Pepsi extends ColdDrink
 {

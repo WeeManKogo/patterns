@@ -2,6 +2,8 @@
 
 namespace Patterns\CreationalDesign\Builder;
 
+use Patterns\CreationalDesign\Builder\Packing\Packing;
+
 interface Item
 {
   public function name(): String;

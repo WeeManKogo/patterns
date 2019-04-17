@@ -2,6 +2,16 @@
 
 namespace Patterns\CreationalDesign\Builder;
 
+use Patterns\CreationalDesign\Builder\Burgers\{
+  VegBurger,
+  ChickenBurger,
+};
+
+use Patterns\CreationalDesign\Builder\Drinks\{
+  Coke,
+  Pepsi,
+};
+
 class MealBuilder
 {
 
