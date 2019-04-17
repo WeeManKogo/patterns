@@ -1,8 +1,10 @@
 <?php
 
-namespace Patterns\CreationalDesign\Singleton;
+namespace Patterns\CreationalDesign\Singleton\Examples;
 
-class Car
+use Patterns\CreationalDesign\Singleton\Singleton;
+
+class Car extends Singleton
 {
-
+  public $mileage = 0;
 }
