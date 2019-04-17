@@ -2,6 +2,12 @@
 
 namespace Patterns\CreationalDesign\Builder;
 
+/**
+ * Class Meal
+ * @package Patterns\CreationalDesign\Builder
+ *
+ * This is Concrete Builder class in Builder Pattern
+ */
 class Meal
 {
 
