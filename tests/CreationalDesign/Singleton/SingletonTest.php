@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 final class SingletonTest extends TestCase
 {
 
-  public function testInstanceOfSingletonCar(): void
+  public function testInstanceOfSingletonShouldBeCar(): void
   {
     $this->assertInstanceOf(
       Car::class,
