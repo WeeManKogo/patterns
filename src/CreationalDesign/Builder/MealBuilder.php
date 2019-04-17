@@ -12,6 +12,12 @@ use Patterns\CreationalDesign\Builder\Drinks\{
   Pepsi,
 };
 
+/**
+ * Class MealBuilder
+ * @package Patterns\CreationalDesign\Builder
+ *
+ * This class is Director in Builder pattern
+ */
 class MealBuilder
 {
 

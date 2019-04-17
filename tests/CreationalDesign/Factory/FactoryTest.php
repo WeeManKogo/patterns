@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace TestPatterns\CreationalDesign\Singleton;
 
-
 use Patterns\CreationalDesign\Factory\{
   Circle,
   Square,
