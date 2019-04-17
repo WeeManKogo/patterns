@@ -2,7 +2,9 @@
 require 'vendor/autoload.php';
 
 use \Patterns\CreationalDesign\{
-  Singleton\Singleton,
+  Singleton\Examples\Car,
+  Singleton\Examples\Fiat,
+  Singleton\Examples\Volvo,
   Factory\ShapeFactory,
   Builder\MealBuilder,
 };
@@ -10,19 +12,6 @@ use \Patterns\CreationalDesign\{
 //SINGLETON-------------------------------------------------------------------------------------------------------------
 echo '<pre>';
 echo '<h2>Singleton</h2>';
-
-class Car extends Singleton {
-
-  public $mileage = 0;
-}
-
-class Fiat extends Car {
-
-}
-
-class Volvo extends Car {
-
-}
 
 $car = Car::getInstance();
 $car->mileage = 100;

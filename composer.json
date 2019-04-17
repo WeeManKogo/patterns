@@ -6,5 +6,10 @@
     "psr-4": {
       "Patterns\\": "src/"
     }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "TestPatterns\\": "tests/"
+    }
   }
 }
