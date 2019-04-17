@@ -1,8 +1,6 @@
 <?php
 
-
-namespace Builder;
-include 'ColdDrink.php';
+namespace Patterns\CreationalDesign\Builder\Drinks;
 
 class Coke extends ColdDrink
 {

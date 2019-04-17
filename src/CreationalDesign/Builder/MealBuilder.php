@@ -1,12 +1,16 @@
 <?php
 
+namespace Patterns\CreationalDesign\Builder;
 
-namespace Builder;
-include 'Meal.php';
-include 'VegBurger.php';
-include 'ChickenBurger.php';
-include 'Coke.php';
-include 'Pepsi.php';
+use Patterns\CreationalDesign\Builder\Burgers\{
+  VegBurger,
+  ChickenBurger,
+};
+
+use Patterns\CreationalDesign\Builder\Drinks\{
+  Coke,
+  Pepsi,
+};
 
 class MealBuilder
 {
