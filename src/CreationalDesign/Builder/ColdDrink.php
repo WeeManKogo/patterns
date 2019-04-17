@@ -1,8 +1,6 @@
 <?php
 
-
-namespace Builder;
-include 'Bottle.php';
+namespace Patterns\CreationalDesign\Builder;
 
 abstract class ColdDrink implements Item
 {

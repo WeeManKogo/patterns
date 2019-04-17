@@ -1,9 +1,6 @@
 <?php
 
-
-namespace Builder;
-include 'Item.php';
-include 'Wrapper.php';
+namespace Patterns\CreationalDesign\Builder;
 
 abstract class Burger implements Item
 {

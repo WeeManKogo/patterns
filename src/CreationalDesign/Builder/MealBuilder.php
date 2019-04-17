@@ -1,12 +1,6 @@
 <?php
 
-
-namespace Builder;
-include 'Meal.php';
-include 'VegBurger.php';
-include 'ChickenBurger.php';
-include 'Coke.php';
-include 'Pepsi.php';
+namespace Patterns\CreationalDesign\Builder;
 
 class MealBuilder
 {

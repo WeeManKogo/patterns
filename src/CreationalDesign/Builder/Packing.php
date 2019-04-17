@@ -1,7 +1,6 @@
 <?php
 
-namespace Builder;
-
+namespace Patterns\CreationalDesign\Builder;
 
 interface Packing
 {

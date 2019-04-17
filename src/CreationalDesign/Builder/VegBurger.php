@@ -1,8 +1,6 @@
 <?php
 
-
-namespace Builder;
-include 'Burger.php';
+namespace Patterns\CreationalDesign\Builder;
 
 class VegBurger extends Burger
 {

@@ -1,8 +1,6 @@
 <?php
 
-
-namespace Builder;
-include 'Packing.php';
+namespace Patterns\CreationalDesign\Builder;
 
 class Wrapper implements Packing
 {
