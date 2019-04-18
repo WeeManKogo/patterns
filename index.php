@@ -1,12 +1,13 @@
 <?php
 require 'vendor/autoload.php';
 
-use \Patterns\CreationalDesign\{
+use Patterns\CreationalDesign\{
   Singleton\Examples\Car,
   Singleton\Examples\Fiat,
   Singleton\Examples\Volvo,
   Factory\ShapeFactory,
-  Builder\MealBuilder,
+  AbstractFactory\FactoryProducer,
+  Builder\MealBuilder
 };
 
 //SINGLETON-------------------------------------------------------------------------------------------------------------
@@ -35,6 +36,19 @@ $square = $shapeFactory->getShape(ShapeFactory::$SHAPE_SQUARE);
 $circle->draw();
 $square->draw();
 //FACTORY-END-----------------------------------------------------------------------------------------------------------
+
+//ABSTRACT-FACTORY------------------------------------------------------------------------------------------------------
+echo '<h2>Abstract Factory</h2>';
+
+$afShapeNormalFactory = FactoryProducer::getShapeFactory(FactoryProducer::NORMAL_FACTORY);
+$afShapeNormalFactory->createRectangle()->draw();
+$afShapeNormalFactory->createTriangle()->draw();
+
+$afShapeRoundedFactory = FactoryProducer::getShapeFactory(FactoryProducer::ROUNDED_FACTORY);
+$afShapeRoundedFactory->createRectangle()->draw();
+$afShapeRoundedFactory->createTriangle()->draw();
+
+//ABSTRACT-FACTORY-END--------------------------------------------------------------------------------------------------
 
 //BUILDER---------------------------------------------------------------------------------------------------------------
 echo '<h2>Builder</h2>';
