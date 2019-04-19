@@ -6,9 +6,9 @@ use Patterns\CreationalDesign\{
   Singleton\Examples\Fiat,
   Singleton\Examples\Volvo,
   Factory\ShapeFactory,
+  FactoryMethod\VolvoFactory,
   AbstractFactory\FactoryProducer,
-  Builder\MealBuilder
-};
+  Builder\MealBuilder};
 
 //SINGLETON-------------------------------------------------------------------------------------------------------------
 echo '<pre>';
@@ -36,6 +36,13 @@ $square = $shapeFactory->getShape(ShapeFactory::$SHAPE_SQUARE);
 $circle->draw();
 $square->draw();
 //FACTORY-END-----------------------------------------------------------------------------------------------------------
+
+//FACTORY---------------------------------------------------------------------------------------------------------------
+echo '<h2>Factory Method</h2>';
+$factory = new VolvoFactory();
+$car = $factory->createCar();
+$car->drive();
+//FACTORY-END---------------------------------------------------------------------------------------------------------------
 
 //ABSTRACT-FACTORY------------------------------------------------------------------------------------------------------
 echo '<h2>Abstract Factory</h2>';
