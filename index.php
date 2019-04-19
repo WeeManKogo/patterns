@@ -1,14 +1,17 @@
 <?php
 require 'vendor/autoload.php';
 
-use Patterns\CreationalDesign\{Prototype\ShapeCache,
+use Patterns\CreationalDesign\{
+  Prototype\ShapeCache,
   Singleton\Examples\Car,
   Singleton\Examples\Fiat,
   Singleton\Examples\Volvo,
   Factory\ShapeFactory,
   FactoryMethod\VolvoFactory,
   AbstractFactory\FactoryProducer,
-  Builder\MealBuilder};
+  Builder\MealBuilder,
+  ObjectPool\WorkerPool,
+};
 
 //SINGLETON-------------------------------------------------------------------------------------------------------------
 echo '<pre>';
@@ -85,3 +88,20 @@ var_dump('Shape2: ' . $clonedShape2->getType());
 $clonedShape3 = ShapeCache::getShape("3");
 var_dump('Shape2: ' . $clonedShape3->getType());
 //PROTOTYPE-END---------------------------------------------------------------------------------------------------------
+
+//OBJECT-POOL-----------------------------------------------------------------------------------------------------------
+echo '<h2>Object Pool</h2>';
+$pool = new WorkerPool();
+
+$worker1 = $pool->getWorker();
+$worker2 = $pool->getWorker();
+
+var_dump($worker1->getId(), $worker1->getName(), $worker1->getCurrentWorkInfo(), '-----');
+var_dump($worker2->getId(), $worker2->getName(), $worker2->getCurrentWorkInfo(), '-----');
+
+$pool->release($worker1);
+
+$worker3 = $pool->getWorker();
+var_dump($worker3->getId(), $worker3->getName(), $worker3->getCurrentWorkInfo(), '-----');
+var_dump($pool);
+//OBJECT-POOL-END-------------------------------------------------------------------------------------------------------
