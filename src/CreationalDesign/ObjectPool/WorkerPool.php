@@ -2,6 +2,12 @@
 
 namespace Patterns\CreationalDesign\ObjectPool;
 
+/**
+ * Class WorkerPool
+ * @package Patterns\CreationalDesign\ObjectPool
+ *
+ * In real scenario this class should be implemented as Singleton
+ */
 class WorkerPool
 {
   private $occupied = [];

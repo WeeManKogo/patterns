@@ -1,7 +1,7 @@
 <?php
 require 'vendor/autoload.php';
 
-use Patterns\CreationalDesign\{ObjectPool\WorkerPool,
+use Patterns\CreationalDesign\{
   Prototype\ShapeCache,
   Singleton\Examples\Car,
   Singleton\Examples\Fiat,
@@ -9,7 +9,9 @@ use Patterns\CreationalDesign\{ObjectPool\WorkerPool,
   Factory\ShapeFactory,
   FactoryMethod\VolvoFactory,
   AbstractFactory\FactoryProducer,
-  Builder\MealBuilder};
+  Builder\MealBuilder,
+  ObjectPool\WorkerPool,
+};
 
 //SINGLETON-------------------------------------------------------------------------------------------------------------
 echo '<pre>';
