@@ -8,7 +8,8 @@ use Patterns\CreationalDesign\{
   Factory\ShapeFactory,
   FactoryMethod\VolvoFactory,
   AbstractFactory\FactoryProducer,
-  Builder\MealBuilder};
+  Builder\MealBuilder,
+};
 
 //SINGLETON-------------------------------------------------------------------------------------------------------------
 echo '<pre>';
@@ -42,7 +43,7 @@ echo '<h2>Factory Method</h2>';
 $factory = new VolvoFactory();
 $car = $factory->createCar();
 $car->drive();
-//FACTORY-END---------------------------------------------------------------------------------------------------------------
+//FACTORY-END-----------------------------------------------------------------------------------------------------------
 
 //ABSTRACT-FACTORY------------------------------------------------------------------------------------------------------
 echo '<h2>Abstract Factory</h2>';
