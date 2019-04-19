@@ -1,15 +1,14 @@
 <?php
 require 'vendor/autoload.php';
 
-use Patterns\CreationalDesign\{
+use Patterns\CreationalDesign\{Prototype\ShapeCache,
   Singleton\Examples\Car,
   Singleton\Examples\Fiat,
   Singleton\Examples\Volvo,
   Factory\ShapeFactory,
   FactoryMethod\VolvoFactory,
   AbstractFactory\FactoryProducer,
-  Builder\MealBuilder,
-};
+  Builder\MealBuilder};
 
 //SINGLETON-------------------------------------------------------------------------------------------------------------
 echo '<pre>';
@@ -71,3 +70,18 @@ $nonVegMeal = $mealBuilder->prepareNonVegMeal();
 $nonVegMeal->showItems();
 print 'Summary cost: ' . $nonVegMeal->getCost();
 //BUILDER-END-----------------------------------------------------------------------------------------------------------
+
+//PROTOTYPE-------------------------------------------------------------------------------------------------------------
+echo '<h2>Prototype</h2>';
+
+ShapeCache::loadCache();
+
+$clonedShape1 = ShapeCache::getShape("1");
+var_dump('Shape1: ' . $clonedShape1->getType());
+
+$clonedShape2 = ShapeCache::getShape("2");
+var_dump('Shape2: ' . $clonedShape2->getType());
+
+$clonedShape3 = ShapeCache::getShape("3");
+var_dump('Shape2: ' . $clonedShape3->getType());
+//PROTOTYPE-END---------------------------------------------------------------------------------------------------------
