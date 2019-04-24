@@ -12,8 +12,10 @@ use Patterns\CreationalDesign\{
   Builder\MealBuilder,
   ObjectPool\WorkerPool,
 };
-use Patterns\StructuralDesign\Adapter\AudioPlayer;
-use Patterns\StructuralDesign\Adapter\MediaAdapter;
+use Patterns\StructuralDesign\{Adapter\AudioPlayer,
+  Adapter\MediaAdapter,
+  Decorator\RedShapeDecorator,
+  Decorator\Shapes\Circle};
 
 echo '<pre>';
 echo '<h2>Creational Design Patterns</h2>';
@@ -114,6 +116,7 @@ var_dump($pool);
 echo '<h2>Structural Design Patterns</h2>';
 
 //ADAPTER---------------------------------------------------------------------------------------------------------------
+echo '<h3>Adapter</h3>';
 $audioPlayer = new AudioPlayer();
 echo "Oryginal audioPlayer:<br>";
 $audioPlayer->play(MediaAdapter::MP3_TYPE, 'simple_audio.mp3');
@@ -124,3 +127,16 @@ $advancedMediaPlayer->play(MediaAdapter::MP3_TYPE, 'test.mp3');
 $advancedMediaPlayer->play(MediaAdapter::MP4_TYPE, 'test.mp4');
 $advancedMediaPlayer->play(MediaAdapter::VLC_TYPE, 'test.vlc');
 //ADAPTER-END-----------------------------------------------------------------------------------------------------------
+
+//DECORATOR-------------------------------------------------------------------------------------------------------------
+echo '<h3>Decorator</h3>';
+$circle = new Circle();
+$redCircle = new RedShapeDecorator($circle);
+
+echo "Draw normal Circle:<br>";
+$circle->draw();
+
+echo "<br>Draw decorated Circle:<br>";
+$redCircle->draw();
+
+//DECORATOR-END---------------------------------------------------------------------------------------------------------
